@@ -1,0 +1,32 @@
+server:
+  port: 9090
+  servlet:
+    context-path: "/api/v1"
+spring:
+  output:
+    ansi:
+      enabled: always
+  application:
+    name: EMPLOYEE-SERVICE
+#       database connection properties
+  datasource:
+    url: jdbc:h2:mem:employeeDB
+    username: admin
+    password: admin
+    driver-class-name: org.h2.Driver
+
+#    Hibernates connection with
+  jpa:
+    show-sql: true
+    properties:
+      hibernates:
+        format-sql: true
+    hibernate:
+      ddl-auto: update
+#      console enable
+  h2:
+    console:
+      enabled: true
+#      properties inside the class should not null while response written something
+  jackson:
+    default-property-inclusion: NON_NULL
